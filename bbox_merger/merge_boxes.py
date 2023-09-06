@@ -1,5 +1,5 @@
 from shapely.geometry import box
-from shapely.ops import cascaded_union
+from shapely.ops import unary_union
 
 
 def calculate_iou(box1, box2):
@@ -59,7 +59,7 @@ def merge_boxes(bboxes):
 
         for other_box in box_objs:
             if other_box.intersects(union_poly):
-                union_poly = cascaded_union([union_poly, other_box])
+                union_poly = unary_union([union_poly, other_box])
             else:
                 overlap_boxes.append(other_box)
 

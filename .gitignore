@@ -1,0 +1,7 @@
+dist/*
+pypi_README.rst
+*.pyc
+__pycache__
+.pytest_cache
+.coverage
+build

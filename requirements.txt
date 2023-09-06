@@ -1,3 +1,4 @@
 pylint==2.17.5
 shapely==2.0.1
 black
+pypandoc

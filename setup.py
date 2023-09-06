@@ -1,10 +1,20 @@
 from distutils.core import setup
 
+try:
+    import pypandoc
+
+    long_description = pypandoc.convert_file("pypi_README.rst", "rst")
+except:
+    long_description = (
+        "This Module will help you out in merging your bboxes if overlaps"
+    )
+
 setup(
     name="bbox_merger",  # How you named your package folder (MyLib)
     packages=["bbox_merger"],  # Chose the same as "name"
-    version="0.0.1",  # Start with a small number and increase it with every change you make
+    version="0.0.11",  # Start with a small number and increase it with every change you make
     license="",  # Chose a license from here: https://help.github.com/articles/licensing-a-repository
+    long_description=long_description,
     description="This Module will help you out in merging your bboxes if overlaps",  # Give a short description about your library
     author="Sohaib Anwaar",  # Type in your name
     author_email="sohaibanwaar36@gmail.com",  # Type in your E-Mail
@@ -18,7 +28,7 @@ setup(
         "Object Detection",
         "Segmentation",
     ],  # Keywords that define your package best
-    install_requires=["shapely==2.0.1"],  # I get to this in a second
+    install_requires=["shapely==2.0.1", "pypandoc==1.11"],  # I get to this in a second
     classifiers=[
         "Development Status :: 3 - Alpha",  # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
         "Intended Audience :: Developers",  # Define that your audience are developers
