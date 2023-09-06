@@ -1,8 +1,5 @@
 from shapely.geometry import box
-
-# from shapely.ops import unary_union
 from shapely.ops import cascaded_union
-import shapely
 
 
 def calculate_iou(box1, box2):
@@ -36,7 +33,9 @@ def calculate_iou(box1, box2):
         intersection_area = box1.intersection(box2).area
         union_area = box1.area + box2.area - intersection_area
         return intersection_area / union_area
-    except shapely.geos.TopologicalError:
+
+    # pylint: disable=broad-except,bare-except
+    except:
         print("shapely.geos.TopologicalError occurred, iou set to 0")
         return 0
 
