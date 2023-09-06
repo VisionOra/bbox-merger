@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: bbox-merger
+Version: 0.0
+Summary: This Module will help you out in merging your bboxes if overlaps
+Home-page: https://github.com/SohaibAnwaar
+Download-URL: https://github.com/user/reponame/archive/v_01.tar.gz
+Author: Sohaib Anwaar
+Author-email: sohaibanwaar36@gmail.com
+Keywords: bbox,merge,Computer Vision,Image processing,Object Detection,Segmentation
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Programming Language :: Python :: 3.8
