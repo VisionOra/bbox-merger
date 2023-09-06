@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name="bbox_merger",  # How you named your package folder (MyLib)
     packages=["bbox_merger"],  # Chose the same as "name"
-    version="0.0",  # Start with a small number and increase it with every change you make
+    version="0.0.1",  # Start with a small number and increase it with every change you make
     license="",  # Chose a license from here: https://help.github.com/articles/licensing-a-repository
     description="This Module will help you out in merging your bboxes if overlaps",  # Give a short description about your library
     author="Sohaib Anwaar",  # Type in your name
