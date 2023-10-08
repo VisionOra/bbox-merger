@@ -44,6 +44,11 @@ output: 0.14285714285714285
 2. After Merging Bounding Boxes
    ![Image1](attachments/merged.png)
 
+
+# Example Python Script
+
+```C:\\path\to\bbox-merger> python3 examples\\example_001.py```
+
 ---
 
 ## Thing To cover
