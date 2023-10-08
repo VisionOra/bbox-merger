@@ -35,10 +35,12 @@ def calculate_iou(box1, box2):
         return intersection_area / union_area
 
     # pylint: disable=broad-except,bare-except
-    except:
+    except TopologicalError:
         print("shapely.geos.TopologicalError occurred, iou set to 0")
         return 0
-
+    except Exception as e:
+        print("An error of type %s occurred, iou set to 0" % type(e).__name__)
+        return 0
 
 def merge_boxes(bboxes):
     """
