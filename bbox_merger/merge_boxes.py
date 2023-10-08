@@ -42,7 +42,7 @@ def calculate_iou(box1, box2):
         print("An error of type %s occurred, iou set to 0" % type(e).__name__)
         return 0
 
-def merge_boxes(bboxes):
+def merge_boxes(bboxes, overlap=0):
     """
     Merge overlapping polygons until no more merging is possible.
 
@@ -60,7 +60,8 @@ def merge_boxes(bboxes):
         overlap_boxes = []
 
         for other_box in box_objs:
-            if other_box.intersects(union_poly):
+            iou = calculate_iou(list(union_poly.bounds), list(other_box.bounds))
+            if iou >= overlap:
                 union_poly = unary_union([union_poly, other_box])
             else:
                 overlap_boxes.append(other_box)
