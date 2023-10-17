@@ -1,5 +1,6 @@
 from shapely.geometry import box
 from shapely.ops import unary_union
+from shapely.errors import TopologicalError
 
 
 def calculate_iou(box1, box2):
