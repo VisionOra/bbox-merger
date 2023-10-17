@@ -1,0 +1,19 @@
+{
+  "detections": [
+    {
+      "bounding_box": {"xmin": 0.027, "ymin": 0.1398, "xmax": 0.243, "ymax": 0.7415},
+      "text": "the",
+      "confidence": 0.79
+    },
+    {
+      "bounding_box": {"xmin": 0.27, "ymin": 0.1525, "xmax": 0.716, "ymax": 0.8051},
+      "text": "Google",
+      "confidence": 0.79
+    },
+    {
+      "bounding_box": {"xmin": 0.598, "ymin": 0.1568, "xmax": 0.981, "ymax": 0.7881},
+      "text": "leplex",
+      "confidence": 0.79
+    }
+  ]
+}

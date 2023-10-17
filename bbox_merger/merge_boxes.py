@@ -1,5 +1,6 @@
 from shapely.geometry import box
 from shapely.ops import unary_union
+from shapely.errors import TopologicalError
 
 
 def calculate_iou(box1, box2):
@@ -35,12 +36,14 @@ def calculate_iou(box1, box2):
         return intersection_area / union_area
 
     # pylint: disable=broad-except,bare-except
-    except:
+    except TopologicalError:
         print("shapely.geos.TopologicalError occurred, iou set to 0")
         return 0
+    except Exception as e:
+        print("An error of type %s occurred, iou set to 0" % type(e).__name__)
+        return 0
 
-
-def merge_boxes(bboxes):
+def merge_boxes(bboxes, overlap=0):
     """
     Merge overlapping polygons until no more merging is possible.
 
@@ -58,7 +61,8 @@ def merge_boxes(bboxes):
         overlap_boxes = []
 
         for other_box in box_objs:
-            if other_box.intersects(union_poly):
+            iou = calculate_iou(list(union_poly.bounds), list(other_box.bounds))
+            if iou >= overlap:
                 union_poly = unary_union([union_poly, other_box])
             else:
                 overlap_boxes.append(other_box)
